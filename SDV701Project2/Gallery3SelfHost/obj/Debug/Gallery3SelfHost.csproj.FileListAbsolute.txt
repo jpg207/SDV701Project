@@ -1,0 +1,30 @@
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe.config
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.dll
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.xml
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.csprojResolveAssemblyReference.cache
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe.config
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.pdb
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.dll
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.xml
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.csprojResolveAssemblyReference.cache
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.exe
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe.config
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\Gallery3SelfHost.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\EntityFramework.dll
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\EntityFramework.xml
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3SelfHost\obj\Debug\Gallery3SelfHost.csprojResolveAssemblyReference.cache

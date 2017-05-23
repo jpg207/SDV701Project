@@ -1,0 +1,41 @@
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\bin\Debug\Gallery3WinForm.exe.config
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\bin\Debug\Gallery3WinForm.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\bin\Debug\Gallery3WinForm.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmArtist.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmMain.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPainting.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPhotograph.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmSculpture.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmWork.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.InputBox.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.Properties.Resources.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.csproj.GenerateResource.Cache
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.pdb
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.csprojResolveAssemblyReference.cache
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmArtist.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmMain.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPainting.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPhotograph.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmSculpture.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmWork.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.InputBox.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.Properties.Resources.resources
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.csproj.GenerateResource.Cache
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.exe
+C:\Users\JON\MEGA\NMIT\Semester 1\SDV701\GitHub\ClassTutorial3 IMPORT\Gallery3WinForm\obj\Debug\Gallery3WinForm.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\bin\Debug\Gallery3WinForm.exe.config
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\bin\Debug\Gallery3WinForm.exe
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\bin\Debug\Gallery3WinForm.pdb
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.csprojResolveAssemblyReference.cache
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmArtist.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmMain.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPainting.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmPhotograph.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmSculpture.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.frmWork.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.InputBox.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.Properties.Resources.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project2\Gallery3WinForm\obj\Debug\Gallery3WinForm.csproj.GenerateResource.Cache
