@@ -14,5 +14,9 @@ namespace AdminApp
         public int NationID { get; set; }
         public string Name { get; set; }
         public int BuildingCapacity { get; set; }
+
+        public override string ToString() {
+            return NationID.ToString() + " " + Name + " " + BuildingCapacity.ToString();
+        }
     }
 }
