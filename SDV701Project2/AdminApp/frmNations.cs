@@ -1,5 +1,6 @@
-using AdminApp.ServiceReference1;
+using Newtonsoft.Json;
 using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace AdminApp
@@ -9,9 +10,9 @@ namespace AdminApp
         private static readonly frmNations _Instance = new frmNations();
 
 
-        public delegate void Notify(string prGalleryName);
+        public delegate void Notify(string prNationName);
 
-        public event Notify GalleryNameChanged;
+        public event Notify NationNameChanged;
 
         private frmNations()
         {
@@ -23,47 +24,45 @@ namespace AdminApp
             get { return frmNations._Instance; }
         }
 
-        private void updateTitle(string prGalleryName)
+        private void updateTitle(string prNationName)
         {
-            if (!string.IsNullOrEmpty(prGalleryName))
-                Text = "Gallery (v3 C) - " + prGalleryName;
+            if (!string.IsNullOrEmpty(prNationName))
+                Text = "Nation - " + prNationName;
         }
 
-        public void UpdateDisplay()
+        async void UpdateDisplay()
         {
+            var json_data = string.Empty;
+            using (var w = new WebClient())
+                    json_data = w.DownloadString("http://localhost/SDV701Project/Server/SelectAllNations");
+                MessageBox.Show(json_data);
+            lblValue.Text = (await clsJSONConnection.GetAllNations()).ToString();
             try
             {
-                lstArtists.DataSource = null;
-                lstArtists.DataSource = Program.SvcClient.GetArtistNames();
+                lstNation.DataSource = null;
+                //SET DATASORCE HERE FOR NATIONS
+
+                
+                lstNation.DataSource = await clsJSONConnection.GetAllNations();
+                //clsJSONConnection.GetNationNamesAsync();
             }
             catch(Exception e)
             {
-                MessageBox.Show("Error connecting to host service. Program will now close \n" + e);
-                Close();
+                throw new Exception("JSON Retrieve Error: " + e.Message);
+                //MessageBox.Show("Error connecting to host service. Program will now close \n" + e);
+                //Close();
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmNation.Run(null);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error adding new artist");
-            }
-        }
-
-        private void lstArtists_DoubleClick(object sender, EventArgs e)
+        private void lstNations_DoubleClick(object sender, EventArgs e)
         {
             string lcKey;
 
-            lcKey = Convert.ToString(lstArtists.SelectedItem);
+            lcKey = Convert.ToString(lstNation.SelectedItem);
             if (lcKey != null)
                 try
                 {
-                    frmNation.Run(lstArtists.SelectedItem as string);
+                    frmNation.Run(lstNation.SelectedItem as string);
                 }
                 catch (Exception ex)
                 {
@@ -76,29 +75,10 @@ namespace AdminApp
             Close();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string lcKey;
-
-            lcKey = Convert.ToString(lstArtists.SelectedItem);
-            if (lcKey != null && MessageBox.Show("Are you sure?", "Deleting artist", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                try
-                {
-                    clsArtist lcArtist = Program.SvcClient.GetArtist(lcKey);
-                    Program.SvcClient.DeleteArtist(lcArtist);
-                    lstArtists.ClearSelected();
-                    UpdateDisplay();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error deleting artist");
-                }
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDisplay();
-            GalleryNameChanged += new Notify(updateTitle);
+            NationNameChanged += new Notify(updateTitle);
         }
 
         private void btnGalName_Click(object sender, EventArgs e)

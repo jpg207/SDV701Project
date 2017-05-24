@@ -15,5 +15,17 @@ namespace Gallery3WinForm
         public frmSplash() {
             InitializeComponent();
         }
+
+        private void bnNations_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

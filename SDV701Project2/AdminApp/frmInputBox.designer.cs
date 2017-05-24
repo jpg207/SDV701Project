@@ -37,7 +37,7 @@ namespace Gallery3WinForm
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(272, 78);
+            this.btnOK.Location = new System.Drawing.Point(275, 93);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 11;
@@ -47,7 +47,7 @@ namespace Gallery3WinForm
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(191, 78);
+            this.btnCancel.Location = new System.Drawing.Point(12, 93);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 10;
@@ -74,7 +74,7 @@ namespace Gallery3WinForm
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(16, 104);
+            this.lblError.Location = new System.Drawing.Point(16, 66);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(39, 13);
             this.lblError.TabIndex = 4;

@@ -1,4 +1,3 @@
-using AdminApp.ServiceReference1;
 using System;
 using System.Windows.Forms;
 
@@ -6,16 +5,16 @@ namespace AdminApp
 {
     public partial class frmShip : Form
     {
-        protected clsWork _Work;
+        protected clsShip _Ship;
 
         public frmShip()
         {
             InitializeComponent();
         }
 
-        public void SetDetails(clsWork prWork)
+        public void SetDetails(clsShip prWork)
         {
-            _Work = prWork;
+            _Ship = prWork;
             updateForm();
             ShowDialog();
         }
@@ -26,10 +25,6 @@ namespace AdminApp
             {
 
                 pushData();
-                if (txtName.Enabled)
-                    Program.SvcClient.InsertWork(_Work);
-                else
-                    Program.SvcClient.UpdateWork(_Work);
 
                 Close();
             }
@@ -47,17 +42,19 @@ namespace AdminApp
 
         protected virtual void updateForm()
         {
-            txtName.Text = _Work.Name;
-            txtCreation.Text = _Work.Date.ToShortDateString();
-            txtValue.Text = _Work.Value.ToString();
-            txtName.Enabled = string.IsNullOrEmpty(_Work.Name);
+            txtName.Text = _Ship.Name;
+            lblDateOfMod.Text = _Ship.DateOfModification.ToShortDateString();
+            txtPrice.Text = _Ship.Price.ToString();
+            txtStock.Text = _Ship.StockQuanitiy.ToString();
+            txtName.Enabled = string.IsNullOrEmpty(_Ship.Name);
         }
 
         protected virtual void pushData()
         {
-            _Work.Name = txtName.Text;
-            _Work.Date = DateTime.Parse(txtCreation.Text);
-            _Work.Value = decimal.Parse(txtValue.Text);
+            _Ship.Name = txtName.Text;
+            _Ship.DateOfModification = DateTime.Parse(lblDateOfMod.Text);
+            _Ship.Price = decimal.Parse(txtPrice.Text);
+            _Ship.StockQuanitiy = int.Parse(txtStock.Text);
         }
 
     }
