@@ -36,18 +36,20 @@ namespace AdminApp
             this.lblDateOfMod = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(97, 43);
+            this.txtPrice.Location = new System.Drawing.Point(97, 57);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 3;
             // 
             // Label2
             // 
-            this.Label2.Location = new System.Drawing.Point(9, 45);
+            this.Label2.Location = new System.Drawing.Point(9, 59);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(80, 16);
             this.Label2.TabIndex = 46;
@@ -55,7 +57,7 @@ namespace AdminApp
             // 
             // Label1
             // 
-            this.Label1.Location = new System.Drawing.Point(8, 74);
+            this.Label1.Location = new System.Drawing.Point(8, 88);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(80, 16);
             this.Label1.TabIndex = 44;
@@ -63,14 +65,14 @@ namespace AdminApp
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(97, 17);
+            this.txtName.Location = new System.Drawing.Point(97, 31);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 1;
             // 
             // Label3
             // 
-            this.Label3.Location = new System.Drawing.Point(9, 20);
+            this.Label3.Location = new System.Drawing.Point(9, 34);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(80, 16);
             this.Label3.TabIndex = 40;
@@ -97,7 +99,7 @@ namespace AdminApp
             // lblDateOfMod
             // 
             this.lblDateOfMod.AutoSize = true;
-            this.lblDateOfMod.Location = new System.Drawing.Point(95, 75);
+            this.lblDateOfMod.Location = new System.Drawing.Point(95, 89);
             this.lblDateOfMod.Name = "lblDateOfMod";
             this.lblDateOfMod.Size = new System.Drawing.Size(35, 13);
             this.lblDateOfMod.TabIndex = 47;
@@ -106,7 +108,7 @@ namespace AdminApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 101);
+            this.label4.Location = new System.Drawing.Point(10, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 48;
@@ -114,16 +116,36 @@ namespace AdminApp
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(97, 97);
+            this.txtStock.Location = new System.Drawing.Point(97, 111);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 49;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Nation:";
+            // 
+            // lblNation
+            // 
+            this.lblNation.AutoSize = true;
+            this.lblNation.Location = new System.Drawing.Point(98, 7);
+            this.lblNation.Name = "lblNation";
+            this.lblNation.Size = new System.Drawing.Size(35, 13);
+            this.lblNation.TabIndex = 51;
+            this.lblNation.Text = "label6";
             // 
             // frmShip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 245);
+            this.Controls.Add(this.lblNation);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDateOfMod);
@@ -153,5 +175,7 @@ namespace AdminApp
         private System.Windows.Forms.Label lblDateOfMod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNation;
     }
 }

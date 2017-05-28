@@ -64,7 +64,7 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "Plane type";
             // 
-            // frmBattleShip
+            // frmCruiser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(352, 245);
@@ -72,8 +72,8 @@
             this.Controls.Add(this.txtPlaneType);
             this.Controls.Add(this.txtTorpTubes);
             this.Controls.Add(this.label5);
-            this.Name = "frmBattleShip";
-            this.Text = "Battleship";
+            this.Name = "frmCruiser";
+            this.Text = "Cruiser";
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.txtTorpTubes, 0);
             this.Controls.SetChildIndex(this.txtPlaneType, 0);

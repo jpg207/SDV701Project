@@ -3,15 +3,23 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using Gallery3WinForm;
+using System.Threading.Tasks;
 
 namespace AdminApp
 {
     public partial class frmNation : Form
     {
+        private static readonly frmNation _Instance = new frmNation();
+
+        public static frmNation Instance
+        {
+            get{return _Instance;}
+        }
+
         private clsNation _Nation;
 //        private clsWorksList _WorksList;
 
-        private static Dictionary<string, frmNation> _ArtistFormList =
+        private static Dictionary<string, frmNation> _NationFormList =
             new Dictionary<string, frmNation>();
 
         private frmNation()
@@ -19,20 +27,14 @@ namespace AdminApp
             InitializeComponent();
         }
 
-        public static void Run(string prArtistName)
+        public static void Run(string prNationName)
         {
             frmNation lcNationForm;
-            if(string.IsNullOrEmpty(prArtistName) || !_ArtistFormList.TryGetValue(prArtistName, out lcNationForm))
+            if(string.IsNullOrEmpty(prNationName) || !_NationFormList.TryGetValue(prNationName, out lcNationForm))
             {
                 lcNationForm = new frmNation();
-                if (string.IsNullOrEmpty(prArtistName))
-                    lcNationForm.SetDetails(new clsNation());
-                else
-                {
-                    _ArtistFormList.Add(prArtistName, lcNationForm);
-                    lcNationForm.refreshFormFromDB(prArtistName);
-
-                }
+                _NationFormList.Add(prNationName, lcNationForm);
+                lcNationForm.refreshFormFromDB(prNationName);
             }
             else
             {
@@ -41,16 +43,10 @@ namespace AdminApp
             }
         }
 
-        private void refreshFormFromDB(string prArtistName)
+        async void refreshFormFromDB(string prNationName)
         {
             //REFRESH NATION PAGE FROM DB HERE
-            //SetDetails(Program.SvcClient.GetArtist(prArtistName));
-        }
-
-        private void updateTitle(string prGalleryName)
-        {
-            if (!string.IsNullOrEmpty(prGalleryName))
-                Text = "Artist Details - " + prGalleryName;
+            SetDetails(await clsJSONConnection.GetNation(prNationName));
         }
 
         private void UpdateDisplay()
@@ -58,24 +54,24 @@ namespace AdminApp
             lstShips.DataSource = null;
             //GET LIST OF SHIPS HERE
             //if (_Nation.Ships != null)
-            //    lstShips.DataSource = _Nation.Ships.ToList();
+            lstShips.DataSource = _Nation.NationShips;
 
         }
 
         public void UpdateForm()
         {
-            lblNation.Text = _Nation.Name;
+            lblNation.Text = "Name: " + _Nation.Name;
+            lblBuildCapacity.Text = "Build Capacity: " + _Nation.BuildingCapacity;
 
         }
 
-        public void SetDetails(clsNation prArtist)
+        public void SetDetails(clsNation prNation)
         {
-            _Nation = prArtist;
+            _Nation = prNation;
             lblNation.Text = _Nation.Name;
             UpdateForm();
             UpdateDisplay();
-            frmNations.Instance.NationNameChanged += new frmNations.Notify(updateTitle);
-//            updateTitle(_Artist.ArtistList.GalleryName);
+            //updateTitle(_Artist.ArtistList.GalleryName);
             Show();
         }
 
@@ -92,12 +88,11 @@ namespace AdminApp
                 clsShip lcShip = clsShip.NewShip(lcReply[0]);
                 if(lcShip != null)
                 {
-                    lcShip.ArtistName = _Nation.Name;
+                    //lcShip.Name = _Nation.Name;
                     lcShip.EditDetails();
                     if (!string.IsNullOrEmpty(lcShip.Name))
                     {
                         refreshFormFromDB(_Nation.Name);
-                        //frmNations.Instance.UpdateDisplay();
                     }
 
                 }
@@ -109,7 +104,7 @@ namespace AdminApp
         {
             try
             {
-                //             _WorksList.EditWork(lstWorks.SelectedIndex);
+                //_WorksList.EditWork(lstWorks.SelectedIndex);
                 (lstShips.SelectedValue as clsShip).EditDetails();
                 UpdateDisplay();
                 //frmNations.Instance.UpdateDisplay();
@@ -124,10 +119,13 @@ namespace AdminApp
         {
             int lcIndex = lstShips.SelectedIndex;
 
-            if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting work", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting Ship", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //CALL DELETE SHIP HERE
                 //Program.SvcClient.DeleteWork(lstShips.SelectedItem as clsShip);
+                //clsShip Ship = lstShips.SelectedItem;
+                clsJSONConnection.DeleteShip((lstShips.SelectedItem as clsShip).ShipID.ToString());
+                System.Threading.Thread.Sleep(500);
                 refreshFormFromDB(_Nation.Name);
                 //frmNations.Instance.UpdateDisplay();
             }

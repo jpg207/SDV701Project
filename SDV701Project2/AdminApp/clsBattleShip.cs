@@ -1,35 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace AdminApp
 {
+    [DataContract]
     public class clsBattleShip : clsShip
     {
-        private int _TorpedoBulge;
-        private int _HealAmount;
 
         public delegate void LoadBattleShipFormDelegate(clsBattleShip prbattleship);
         public static LoadBattleShipFormDelegate LoadBattleShipForm;
 
-        public int TorpedoBulge
-        {
-            get{return _TorpedoBulge;}
-
-            set{_TorpedoBulge = value;}
-        }
-
-        public int HealAmount
-        {
-            get{return _HealAmount;}
-
-            set{_HealAmount = value;}
-        }
+        [DataMember]
+        public int TorpedoBulge { get; set; }
+        [DataMember]
+        public int HealAmount { get; set; }
 
         public override void EditDetails() {
             LoadBattleShipForm(this);
+        }
+
+        public override string ToString() {
+            return Name + "\t" + Price.ToString() + "\t" + DateOfModification + "\t" + StockQuanitiy + "\t" + Type;
         }
     }
 }

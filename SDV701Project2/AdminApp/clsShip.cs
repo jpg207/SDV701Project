@@ -1,24 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AdminApp
 {
+    [DataContract]
+    [KnownType(typeof(clsCruiser))]
+    [KnownType(typeof(clsBattleShip))]
     public abstract class clsShip
     {
-        private string _Name;
-        private DateTime _DateOfModification = DateTime.Now;
-        private decimal _Price;
-        private int _StockQuanitiy;
-        private string _Type;
-        private string _ArtistName;
-
-
-        public clsShip() {
-            EditDetails();
-        }
+        public clsShip() {}
 
         public static readonly string FACTORY_PROMPT = "Enter B for BattleShip or C for Cruiser";
 
@@ -32,45 +26,20 @@ namespace AdminApp
         }
 
         public abstract void EditDetails();
+        [DataMember]
+        public int ShipID { get; set; }
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public int Price { get; set; }
+        [DataMember]
+        public string DateOfModification { get; set; }
+        [DataMember]
+        public int StockQuanitiy { get; set; }
+        [DataMember]
+        public string Type { get; set; }
+        [DataMember]
+        public int NationID { get; set; }
 
-        public override string ToString() {
-            return _Name + "\t" + DateOfModification.ToShortDateString();
-        }
-
-        public string Name
-        {
-            get { return _Name; }
-            set { _Name = value; }
-        }
-
-        public DateTime DateOfModification
-        {
-            get{return _DateOfModification;}
-            set{_DateOfModification = value;}
-        }
-
-        public decimal Price
-        {
-            get{return _Price;}
-            set{_Price = value;}
-        }
-
-        public int StockQuanitiy
-        {
-            get{return _StockQuanitiy;}
-            set{_StockQuanitiy = value;}
-        }
-
-        public string Type
-        {
-            get{return _Type;}
-            set{_Type = value;}
-        }
-
-        public string ArtistName
-        {
-            get{return _ArtistName;}
-            set{_ArtistName = value;}
-        }
     }
 }

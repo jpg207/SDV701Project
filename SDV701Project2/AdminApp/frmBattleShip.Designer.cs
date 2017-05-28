@@ -46,25 +46,25 @@
             this.txtHealAmount.Size = new System.Drawing.Size(100, 20);
             this.txtHealAmount.TabIndex = 51;
             // 
-            // label5
+            // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(9, 128);
-            this.label7.Name = "label5";
+            this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 52;
             this.label7.Text = "Torpedo bulge %";
             // 
-            // label6
+            // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(11, 154);
-            this.label8.Name = "label6";
+            this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 53;
             this.label8.Text = "Heal amount";
             // 
-            // frmCruiser
+            // frmBattleShip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(352, 245);
@@ -72,8 +72,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtHealAmount);
             this.Controls.Add(this.txtTorpedoBulge);
-            this.Name = "frmCruiser";
-            this.Text = "Cruiser";
+            this.Name = "frmBattleShip";
+            this.Text = "BattleShip";
             this.Controls.SetChildIndex(this.txtTorpedoBulge, 0);
             this.Controls.SetChildIndex(this.txtHealAmount, 0);
             this.Controls.SetChildIndex(this.label7, 0);

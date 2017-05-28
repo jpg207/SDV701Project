@@ -63,7 +63,6 @@
     <Compile Include="clsNations.cs" />
     <Compile Include="clsOrder.cs" />
     <Compile Include="clsShip.cs" />
-    <Compile Include="DTO.cs" />
     <Compile Include="frmCruiser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +75,12 @@
     <Compile Include="frmBattleShip.Designer.cs">
       <DependentUpon>frmBattleShip.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +92,12 @@
     </Compile>
     <Compile Include="frmNations.designer.cs">
       <DependentUpon>frmNations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSplash.cs">
       <SubType>Form</SubType>
@@ -114,11 +125,17 @@
     <EmbeddedResource Include="frmBattleShip.resx">
       <DependentUpon>frmBattleShip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNation.resx">
       <DependentUpon>frmNation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNations.resx">
       <DependentUpon>frmNations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShip.resx">
       <DependentUpon>frmShip.cs</DependentUpon>

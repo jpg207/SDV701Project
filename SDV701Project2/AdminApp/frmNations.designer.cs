@@ -28,7 +28,7 @@ namespace AdminApp
         private void InitializeComponent() {
             this.lblValue = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
-            this.btnQuit = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.lstNation = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -48,14 +48,14 @@ namespace AdminApp
             this.Label2.TabIndex = 12;
             this.Label2.Text = "Total Value";
             // 
-            // btnQuit
+            // btnClose
             // 
-            this.btnQuit.Location = new System.Drawing.Point(164, 211);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(80, 32);
-            this.btnQuit.TabIndex = 11;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            this.btnClose.Location = new System.Drawing.Point(164, 221);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(80, 22);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Label1
             // 
@@ -69,7 +69,7 @@ namespace AdminApp
             // 
             this.lstNation.Location = new System.Drawing.Point(17, 29);
             this.lstNation.Name = "lstNation";
-            this.lstNation.Size = new System.Drawing.Size(227, 173);
+            this.lstNation.Size = new System.Drawing.Size(227, 186);
             this.lstNation.TabIndex = 7;
             this.lstNation.SelectedIndexChanged += new System.EventHandler(this.lstArtists_SelectedIndexChanged);
             this.lstNation.DoubleClick += new System.EventHandler(this.lstNations_DoubleClick);
@@ -78,10 +78,10 @@ namespace AdminApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 253);
+            this.ClientSize = new System.Drawing.Size(260, 253);
             this.Controls.Add(this.lblValue);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.lstNation);
             this.Name = "frmNations";
@@ -95,7 +95,7 @@ namespace AdminApp
 
         internal System.Windows.Forms.Label lblValue;
         internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Button btnQuit;
+        internal System.Windows.Forms.Button btnClose;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ListBox lstNation;
     }

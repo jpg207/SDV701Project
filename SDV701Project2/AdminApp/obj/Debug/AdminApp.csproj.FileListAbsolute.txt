@@ -47,3 +47,5 @@ C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\
 C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\AdminApp\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\AdminApp\obj\Debug\AdminApp.csprojResolveAssemblyReference.cache
 C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\AdminApp\bin\Debug\MySql.Data.dll
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\AdminApp\obj\Debug\AdminApp.frmMain.resources
+C:\Users\jpg20\Mega\NMIT\Semester 1\SDV701\Project\SDV701Project\SDV701Project2\AdminApp\obj\Debug\AdminApp.frmOrder.resources

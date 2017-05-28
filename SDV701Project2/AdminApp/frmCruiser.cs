@@ -23,15 +23,15 @@ namespace AdminApp
         protected override void updateForm() {
             base.updateForm();
             clsCruiser lcShip = (clsCruiser)this._Ship;
-            txtPlaneType.Text = lcShip.PlaneType.ToString();
-            txtTorpTubes.Text = lcShip.TorpTubes.ToString();
+            txtPlaneType.Text = lcShip.PlaneType;
+            txtTorpTubes.Text = lcShip.TorpedoTubeCount;
         }
 
         protected override void pushData() {
             base.pushData();
             clsCruiser lcShip = (clsCruiser)_Ship;
-            lcShip.PlaneType = int.Parse(txtPlaneType.Text);
-            lcShip.TorpTubes = int.Parse(txtTorpTubes.Text);
+            lcShip.PlaneType = txtPlaneType.Text;
+            lcShip.TorpedoTubeCount = txtTorpTubes.Text;
         }
     }
 }

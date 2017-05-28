@@ -1,18 +1,17 @@
 using Newtonsoft.Json;
 using System;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace AdminApp
 {
-    public sealed partial class frmNations : Form
+    public partial class frmNations : Form
     {
         private static readonly frmNations _Instance = new frmNations();
 
 
         public delegate void Notify(string prNationName);
-
-        public event Notify NationNameChanged;
 
         private frmNations()
         {
@@ -21,7 +20,7 @@ namespace AdminApp
 
         public static frmNations Instance
         {
-            get { return frmNations._Instance; }
+            get { return _Instance; }
         }
 
         private void updateTitle(string prNationName)
@@ -30,27 +29,23 @@ namespace AdminApp
                 Text = "Nation - " + prNationName;
         }
 
-        async void UpdateDisplay()
+        private async void UpdateDisplay()
         {
-            var json_data = string.Empty;
-            using (var w = new WebClient())
-                    json_data = w.DownloadString("http://localhost/SDV701Project/Server/SelectAllNations");
-                MessageBox.Show(json_data);
-            lblValue.Text = (await clsJSONConnection.GetAllNations()).ToString();
+            //var json_data = string.Empty;
+            //using (var w = new WebClient())
+            //        json_data = w.DownloadString("http://localhost/SDV701Project/Server/SelectAllNations");
+            //    MessageBox.Show(json_data);
             try
             {
                 lstNation.DataSource = null;
                 //SET DATASORCE HERE FOR NATIONS
-
-                
                 lstNation.DataSource = await clsJSONConnection.GetAllNations();
                 //clsJSONConnection.GetNationNamesAsync();
             }
             catch(Exception e)
             {
-                throw new Exception("JSON Retrieve Error: " + e.Message);
-                //MessageBox.Show("Error connecting to host service. Program will now close \n" + e);
-                //Close();
+                MessageBox.Show("Error connecting to host service. Program will now close \n" + e);
+                Close();
             }
         }
 
@@ -62,7 +57,8 @@ namespace AdminApp
             if (lcKey != null)
                 try
                 {
-                    frmNation.Run(lstNation.SelectedItem as string);
+                    lcKey = Regex.Match(lcKey, @"^[^0-9]*").Value;
+                    frmNation.Run(lcKey);
                 }
                 catch (Exception ex)
                 {
@@ -70,15 +66,14 @@ namespace AdminApp
                 }
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDisplay();
-            NationNameChanged += new Notify(updateTitle);
         }
 
         private void btnGalName_Click(object sender, EventArgs e)

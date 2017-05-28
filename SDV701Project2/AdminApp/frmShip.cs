@@ -12,9 +12,9 @@ namespace AdminApp
             InitializeComponent();
         }
 
-        public void SetDetails(clsShip prWork)
+        public void SetDetails(clsShip prShip)
         {
-            _Ship = prWork;
+            _Ship = prShip;
             updateForm();
             ShowDialog();
         }
@@ -25,6 +25,8 @@ namespace AdminApp
             {
 
                 pushData();
+
+                //frmNation.Instance.();
 
                 Close();
             }
@@ -42,8 +44,9 @@ namespace AdminApp
 
         protected virtual void updateForm()
         {
+            lblNation.Text = _Ship.NationID.ToString();
             txtName.Text = _Ship.Name;
-            lblDateOfMod.Text = _Ship.DateOfModification.ToShortDateString();
+            lblDateOfMod.Text = _Ship.DateOfModification;
             txtPrice.Text = _Ship.Price.ToString();
             txtStock.Text = _Ship.StockQuanitiy.ToString();
             txtName.Enabled = string.IsNullOrEmpty(_Ship.Name);
@@ -52,8 +55,8 @@ namespace AdminApp
         protected virtual void pushData()
         {
             _Ship.Name = txtName.Text;
-            _Ship.DateOfModification = DateTime.Parse(lblDateOfMod.Text);
-            _Ship.Price = decimal.Parse(txtPrice.Text);
+            _Ship.DateOfModification = lblDateOfMod.Text;
+            _Ship.Price = int.Parse(txtPrice.Text);
             _Ship.StockQuanitiy = int.Parse(txtStock.Text);
         }
 
