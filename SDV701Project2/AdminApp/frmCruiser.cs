@@ -32,6 +32,7 @@ namespace AdminApp
             clsCruiser lcShip = (clsCruiser)_Ship;
             lcShip.PlaneType = txtPlaneType.Text;
             lcShip.TorpedoTubeCount = txtTorpTubes.Text;
+            lcShip.Type = "AdminApp.clsCruiser, AdminApp";
         }
     }
 }

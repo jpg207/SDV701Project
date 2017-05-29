@@ -23,11 +23,9 @@ namespace AdminApp
         {
             if (isValid())
             {
-
                 pushData();
-
+                clsJSONConnection.AddShip(_Ship);
                 //frmNation.Instance.();
-
                 Close();
             }
         }
@@ -44,7 +42,6 @@ namespace AdminApp
 
         protected virtual void updateForm()
         {
-            lblNation.Text = _Ship.NationID.ToString();
             txtName.Text = _Ship.Name;
             lblDateOfMod.Text = _Ship.DateOfModification;
             txtPrice.Text = _Ship.Price.ToString();

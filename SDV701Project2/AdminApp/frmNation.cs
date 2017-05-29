@@ -88,7 +88,7 @@ namespace AdminApp
                 clsShip lcShip = clsShip.NewShip(lcReply[0]);
                 if(lcShip != null)
                 {
-                    //lcShip.Name = _Nation.Name;
+                    lcShip.NationID = _Nation.NationID;
                     lcShip.EditDetails();
                     if (!string.IsNullOrEmpty(lcShip.Name))
                     {

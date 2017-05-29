@@ -36,8 +36,6 @@ namespace AdminApp
             this.lblDateOfMod = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblNation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPrice
@@ -121,31 +119,11 @@ namespace AdminApp
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 49;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Nation:";
-            // 
-            // lblNation
-            // 
-            this.lblNation.AutoSize = true;
-            this.lblNation.Location = new System.Drawing.Point(98, 7);
-            this.lblNation.Name = "lblNation";
-            this.lblNation.Size = new System.Drawing.Size(35, 13);
-            this.lblNation.TabIndex = 51;
-            this.lblNation.Text = "label6";
-            // 
             // frmShip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 245);
-            this.Controls.Add(this.lblNation);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDateOfMod);
@@ -175,7 +153,5 @@ namespace AdminApp
         private System.Windows.Forms.Label lblDateOfMod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblNation;
     }
 }

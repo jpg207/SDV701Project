@@ -34,14 +34,14 @@
             // 
             // txtTorpedoBulge
             // 
-            this.txtTorpedoBulge.Location = new System.Drawing.Point(97, 123);
+            this.txtTorpedoBulge.Location = new System.Drawing.Point(97, 137);
             this.txtTorpedoBulge.Name = "txtTorpedoBulge";
             this.txtTorpedoBulge.Size = new System.Drawing.Size(100, 20);
             this.txtTorpedoBulge.TabIndex = 50;
             // 
             // txtHealAmount
             // 
-            this.txtHealAmount.Location = new System.Drawing.Point(97, 149);
+            this.txtHealAmount.Location = new System.Drawing.Point(97, 163);
             this.txtHealAmount.Name = "txtHealAmount";
             this.txtHealAmount.Size = new System.Drawing.Size(100, 20);
             this.txtHealAmount.TabIndex = 51;
@@ -49,7 +49,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 128);
+            this.label7.Location = new System.Drawing.Point(9, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 52;
@@ -58,7 +58,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 154);
+            this.label8.Location = new System.Drawing.Point(11, 168);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 53;

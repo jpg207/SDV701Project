@@ -35,7 +35,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 126);
+            this.label5.Location = new System.Drawing.Point(8, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 50;
@@ -43,14 +43,14 @@
             // 
             // txtTorpTubes
             // 
-            this.txtTorpTubes.Location = new System.Drawing.Point(97, 123);
+            this.txtTorpTubes.Location = new System.Drawing.Point(97, 137);
             this.txtTorpTubes.Name = "txtTorpTubes";
             this.txtTorpTubes.Size = new System.Drawing.Size(100, 20);
             this.txtTorpTubes.TabIndex = 51;
             // 
             // txtPlaneType
             // 
-            this.txtPlaneType.Location = new System.Drawing.Point(97, 149);
+            this.txtPlaneType.Location = new System.Drawing.Point(97, 163);
             this.txtPlaneType.Name = "txtPlaneType";
             this.txtPlaneType.Size = new System.Drawing.Size(100, 20);
             this.txtPlaneType.TabIndex = 52;
@@ -58,7 +58,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 152);
+            this.label6.Location = new System.Drawing.Point(10, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 53;

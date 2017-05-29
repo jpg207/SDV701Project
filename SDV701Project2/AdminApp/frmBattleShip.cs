@@ -32,6 +32,7 @@ namespace AdminApp
             clsBattleShip lcShip = (clsBattleShip)_Ship;
             lcShip.TorpedoBulge = int.Parse(txtTorpedoBulge.Text);
             lcShip.HealAmount = int.Parse(txtHealAmount.Text);
+            lcShip.Type = "AdminApp.clsBattleShip, AdminApp";
         }
     }
 }
