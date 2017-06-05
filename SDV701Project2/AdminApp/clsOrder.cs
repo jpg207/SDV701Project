@@ -15,11 +15,11 @@ namespace AdminApp
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public string CustomerEmail { get; set; }
-        public string TransactionType { get; set; }
+        public string Name { get; set; }
         public int ShipID { get; set; }
 
         public override string ToString() {
-            return OrderID.ToString() + "\t" + CustomerEmail + "\t" + Quantity.ToString() + "\t" + Price.ToString() + "\t" + DateOfOrder + "\t" + TransactionType + "\t" + ShipID.ToString();
+            return OrderID.ToString().PadRight(20) + Name.PadRight(25 - Name.Length) + CustomerEmail.PadRight(25 - CustomerEmail.Length) + Price.ToString().PadRight(10) + ShipID.ToString().PadRight(20);
         }
     }
 }

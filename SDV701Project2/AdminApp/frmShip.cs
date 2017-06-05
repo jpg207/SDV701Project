@@ -24,7 +24,15 @@ namespace AdminApp
             if (isValid())
             {
                 pushData();
-                clsJSONConnection.AddShip(_Ship);
+                if (txtName.Enabled == true)
+                {
+                    clsJSONConnection.AddShip(_Ship);
+                }
+                else
+                {
+                    clsJSONConnection.UpdateShip(_Ship);
+                }
+                
                 //frmNation.Instance.();
                 Close();
             }

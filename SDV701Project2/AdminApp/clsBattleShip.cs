@@ -19,7 +19,7 @@ namespace AdminApp
         }
 
         public override string ToString() {
-            return Name + "\t" + Price.ToString() + "\t" + DateOfModification + "\t" + StockQuanitiy + "\t" + Type;
+            return Name + "\t" + Price.ToString() + "\t" + DateOfModification + "\t" + StockQuanitiy;
         }
     }
 }

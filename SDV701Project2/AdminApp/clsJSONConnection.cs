@@ -13,30 +13,25 @@ namespace AdminApp
 
         private static string BaseAddress = "http://localhost/SDV701Project/Server/";
 
-        internal async static Task<List<clsNation>> GetAllNations() {
-            using (HttpClient lcHttpClient = new HttpClient())
-                return JsonConvert.DeserializeObject<List<clsNation>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllNations"));
-        }
-
-        internal async static Task<List<clsOrder>> GetAllOrders() {
-            using (HttpClient lcHttpClient = new HttpClient())
-                return JsonConvert.DeserializeObject<List<clsOrder>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllOrders"));
-        }
-
-        internal async static Task<clsNation> GetNation(string NationName) {
+        internal static List<clsNation> GetAllNations() {
             using (HttpClient lcHttpClient = new HttpClient())
             {
                 using (var w = new WebClient())
                 {
-                    var lcJson = w.DownloadString(BaseAddress + "SelectNation/" + NationName);
+                    var lcJson = w.DownloadString(BaseAddress + "SelectAllNations/");
                     JsonSerializerSettings settings = new JsonSerializerSettings
                     {
                         TypeNameHandling = TypeNameHandling.All
                     };
 
-                    return JsonConvert.DeserializeObject<clsNation>(lcJson, settings);
-                }  
+                    return JsonConvert.DeserializeObject<List<clsNation>>(lcJson, settings);
+                }
             }
+        }
+
+        internal async static Task<List<clsOrder>> GetAllOrders() {
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<List<clsOrder>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllOrders"));
         }
 
         internal async static void DeleteOrder(string OrderID) {
@@ -49,14 +44,6 @@ namespace AdminApp
                 await lcHttpClient.GetStringAsync(BaseAddress + "DeleteShip/" + ShipID);
         }
 
-        //internal async static void AddShip(clsShip Ship) {
-        //    StringContent content = new StringContent(JsonConvert.SerializeObject(Ship), Encoding.UTF8, "application/json");
-        //    using (var client = new HttpClient())
-        //    {
-        //        var result = await client.PostAsync(BaseAddress + "AddShip", new StringContent(Ship.ToString(), Encoding.UTF8, "application/json"));
-        //    }
-        //}
-
         public static void AddShip(clsShip Ship) {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);
@@ -66,6 +53,17 @@ namespace AdminApp
             var jsonString = JsonConvert.SerializeObject(Ship);
 
             var response = client.PostAsJsonAsync("AddShip", Ship).Result;
+        }
+
+        public static void UpdateShip(clsShip Ship) {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(BaseAddress);
+            client.DefaultRequestHeaders.Accept.Add(
+               new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var jsonString = JsonConvert.SerializeObject(Ship);
+
+            var response = client.PostAsJsonAsync("UpdateShip", Ship).Result;
         }
     }
 }

@@ -17,36 +17,29 @@ namespace AdminApp
         }
 
         private clsNation _Nation;
-//        private clsWorksList _WorksList;
+    //private clsWorksList _WorksList;
 
-        private static Dictionary<string, frmNation> _NationFormList =
-            new Dictionary<string, frmNation>();
+        private static Dictionary<int, frmNation> _NationFormList = new Dictionary<int, frmNation>();
 
         private frmNation()
         {
             InitializeComponent();
         }
 
-        public static void Run(string prNationName)
+        public static void Run(clsNation Nation)
         {
             frmNation lcNationForm;
-            if(string.IsNullOrEmpty(prNationName) || !_NationFormList.TryGetValue(prNationName, out lcNationForm))
+            if(Nation.NationID == 0 || !_NationFormList.TryGetValue(Nation.NationID, out lcNationForm))
             {
                 lcNationForm = new frmNation();
-                _NationFormList.Add(prNationName, lcNationForm);
-                lcNationForm.refreshFormFromDB(prNationName);
+                _NationFormList.Add(Nation.NationID, lcNationForm);
+                lcNationForm.SetDetails(Nation);
             }
             else
             {
                 lcNationForm.Show();
                 lcNationForm.Activate();
             }
-        }
-
-        async void refreshFormFromDB(string prNationName)
-        {
-            //REFRESH NATION PAGE FROM DB HERE
-            SetDetails(await clsJSONConnection.GetNation(prNationName));
         }
 
         private void UpdateDisplay()
@@ -92,7 +85,7 @@ namespace AdminApp
                     lcShip.EditDetails();
                     if (!string.IsNullOrEmpty(lcShip.Name))
                     {
-                        refreshFormFromDB(_Nation.Name);
+                        SetDetails(_Nation);
                     }
 
                 }
@@ -100,7 +93,7 @@ namespace AdminApp
 
         }
 
-        private void lstWorks_DoubleClick(object sender, EventArgs e)
+        private void lstShip_DoubleClick(object sender, EventArgs e)
         {
             try
             {
@@ -125,8 +118,10 @@ namespace AdminApp
                 //Program.SvcClient.DeleteWork(lstShips.SelectedItem as clsShip);
                 //clsShip Ship = lstShips.SelectedItem;
                 clsJSONConnection.DeleteShip((lstShips.SelectedItem as clsShip).ShipID.ToString());
+
                 System.Threading.Thread.Sleep(500);
-                refreshFormFromDB(_Nation.Name);
+
+                SetDetails(_Nation);
                 //frmNations.Instance.UpdateDisplay();
             }
         }

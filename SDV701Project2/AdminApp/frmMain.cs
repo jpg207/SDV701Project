@@ -12,6 +12,15 @@ namespace AdminApp
 {
     public partial class frmMain : Form
     {
+
+        private static List<clsNation> _NationList = new List<clsNation>();
+
+        public static List<clsNation> NationList
+        {
+            get { return _NationList; }
+            set { _NationList = value; }
+        }
+
         public frmMain() {
             InitializeComponent();
         }
@@ -39,14 +48,14 @@ namespace AdminApp
             checkConnection();
         }
 
-        async void checkConnection() {
+        private void checkConnection() {
             string Status;
             btnNations.Enabled = false;
             btnOrders.Enabled = false;
             lblStatus.Text = "Status: Establishing Connection";
             try
             {
-                await clsJSONConnection.GetAllNations();
+                NationList = clsJSONConnection.GetAllNations();
                 Status = "Status: Connected";
                 btnNations.Enabled = true;
                 btnOrders.Enabled = true;

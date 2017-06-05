@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -9,7 +10,6 @@ namespace AdminApp
     public partial class frmNations : Form
     {
         private static readonly frmNations _Instance = new frmNations();
-
 
         public delegate void Notify(string prNationName);
 
@@ -29,18 +29,13 @@ namespace AdminApp
                 Text = "Nation - " + prNationName;
         }
 
-        private async void UpdateDisplay()
+        private void UpdateDisplay()
         {
-            //var json_data = string.Empty;
-            //using (var w = new WebClient())
-            //        json_data = w.DownloadString("http://localhost/SDV701Project/Server/SelectAllNations");
-            //    MessageBox.Show(json_data);
             try
             {
                 lstNation.DataSource = null;
                 //SET DATASORCE HERE FOR NATIONS
-                lstNation.DataSource = await clsJSONConnection.GetAllNations();
-                //clsJSONConnection.GetNationNamesAsync();
+                lstNation.DataSource = frmMain.NationList;
             }
             catch(Exception e)
             {
@@ -51,19 +46,8 @@ namespace AdminApp
 
         private void lstNations_DoubleClick(object sender, EventArgs e)
         {
-            string lcKey;
-
-            lcKey = Convert.ToString(lstNation.SelectedItem);
-            if (lcKey != null)
-                try
-                {
-                    lcKey = Regex.Match(lcKey, @"^[^0-9]*").Value;
-                    frmNation.Run(lcKey);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "This should never occur");
-                }
+            clsNation Nation = lstNation.SelectedItem as clsNation;
+            frmNation.Run(Nation);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

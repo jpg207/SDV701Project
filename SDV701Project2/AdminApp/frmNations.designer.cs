@@ -31,6 +31,7 @@ namespace AdminApp
             this.btnClose = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.lstNation = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblValue
@@ -74,11 +75,20 @@ namespace AdminApp
             this.lstNation.SelectedIndexChanged += new System.EventHandler(this.lstArtists_SelectedIndexChanged);
             this.lstNation.DoubleClick += new System.EventHandler(this.lstNations_DoubleClick);
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(87, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Building Capacity";
+            // 
             // frmNations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(260, 253);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblValue);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.btnClose);
@@ -98,6 +108,7 @@ namespace AdminApp
         internal System.Windows.Forms.Button btnClose;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ListBox lstNation;
+        internal System.Windows.Forms.Label label3;
     }
 }
 
