@@ -16,6 +16,7 @@ namespace AdminApp
         private frmNations()
         {
             InitializeComponent();
+            UpdateDisplay();
         }
 
         public static frmNations Instance
@@ -34,8 +35,7 @@ namespace AdminApp
             try
             {
                 lstNation.DataSource = null;
-                //SET DATASORCE HERE FOR NATIONS
-                lstNation.DataSource = frmMain.NationList;
+                lstNation.DataSource = clsNations.NationList;
             }
             catch(Exception e)
             {
@@ -58,17 +58,6 @@ namespace AdminApp
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDisplay();
-        }
-
-        private void btnGalName_Click(object sender, EventArgs e)
-        {
- //           _ArtistList.GalleryName = new InputBox("Enter Gallery Name:").Answer;
- //           GalleryNameChanged(_ArtistList.GalleryName);
-        }
-
-        private void lstArtists_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

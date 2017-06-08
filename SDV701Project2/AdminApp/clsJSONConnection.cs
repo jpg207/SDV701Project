@@ -13,7 +13,7 @@ namespace AdminApp
 
         private static string BaseAddress = "http://localhost/SDV701Project/Server/";
 
-        internal static List<clsNation> GetAllNations() {
+        public static List<clsNation> GetAllNations() {
             using (HttpClient lcHttpClient = new HttpClient())
             {
                 using (var w = new WebClient())
@@ -29,6 +29,15 @@ namespace AdminApp
             }
         }
 
+        //internal async static Task<List<clsNation>> GetAllNations() {
+        //    using (HttpClient lcHttpClient = new HttpClient()) { 
+        //        JsonSerializerSettings settings = new JsonSerializerSettings{
+        //            TypeNameHandling = TypeNameHandling.All
+        //        };
+        //        return JsonConvert.DeserializeObject<List<clsNation>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllNations/"), settings);
+        //    }
+        //}
+
         internal async static Task<List<clsOrder>> GetAllOrders() {
             using (HttpClient lcHttpClient = new HttpClient())
                 return JsonConvert.DeserializeObject<List<clsOrder>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllOrders"));
@@ -39,12 +48,12 @@ namespace AdminApp
                 await lcHttpClient.GetStringAsync(BaseAddress + "DeleteOrder/" + OrderID);
         }
 
-        internal async static void DeleteShip(string ShipID) {
+        internal async static Task DeleteShip(string ShipID) {
             using (HttpClient lcHttpClient = new HttpClient())
                 await lcHttpClient.GetStringAsync(BaseAddress + "DeleteShip/" + ShipID);
         }
 
-        public static void AddShip(clsShip Ship) {
+        internal async static Task AddShip(clsShip Ship) {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);
             client.DefaultRequestHeaders.Accept.Add(
@@ -55,7 +64,7 @@ namespace AdminApp
             var response = client.PostAsJsonAsync("AddShip", Ship).Result;
         }
 
-        public static void UpdateShip(clsShip Ship) {
+        internal async static Task UpdateShip(clsShip Ship) {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);
             client.DefaultRequestHeaders.Accept.Add(

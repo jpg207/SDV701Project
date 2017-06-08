@@ -17,7 +17,6 @@ namespace AdminApp
         }
 
         private clsNation _Nation;
-    //private clsWorksList _WorksList;
 
         private static Dictionary<int, frmNation> _NationFormList = new Dictionary<int, frmNation>();
 
@@ -37,18 +36,20 @@ namespace AdminApp
             }
             else
             {
+                lcNationForm.SetDetails(Nation);
                 lcNationForm.Show();
                 lcNationForm.Activate();
             }
         }
 
-        private void UpdateDisplay()
-        {
+        private void UpdateDisplay() {
             lstShips.DataSource = null;
-            //GET LIST OF SHIPS HERE
-            //if (_Nation.Ships != null)
             lstShips.DataSource = _Nation.NationShips;
 
+        }
+
+        private void refreshDB() {
+            clsNations.NationList = clsJSONConnection.GetAllNations();
         }
 
         public void UpdateForm()
@@ -60,11 +61,12 @@ namespace AdminApp
 
         public void SetDetails(clsNation prNation)
         {
-            _Nation = prNation;
+            refreshDB();
+            System.Threading.Thread.Sleep(1);
+            _Nation = clsNations.NationList.First(clsNation => clsNation.NationID == prNation.NationID);
             lblNation.Text = _Nation.Name;
             UpdateForm();
             UpdateDisplay();
-            //updateTitle(_Artist.ArtistList.GalleryName);
             Show();
         }
 
@@ -97,10 +99,8 @@ namespace AdminApp
         {
             try
             {
-                //_WorksList.EditWork(lstWorks.SelectedIndex);
                 (lstShips.SelectedValue as clsShip).EditDetails();
-                UpdateDisplay();
-                //frmNations.Instance.UpdateDisplay();
+                SetDetails(_Nation);
             }
             catch (Exception ex)
             {
@@ -108,21 +108,14 @@ namespace AdminApp
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
+        private async void btnDelete_Click(object sender, EventArgs e) {
             int lcIndex = lstShips.SelectedIndex;
 
             if (lcIndex >= 0 && MessageBox.Show("Are you sure?", "Deleting Ship", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //CALL DELETE SHIP HERE
-                //Program.SvcClient.DeleteWork(lstShips.SelectedItem as clsShip);
-                //clsShip Ship = lstShips.SelectedItem;
-                clsJSONConnection.DeleteShip((lstShips.SelectedItem as clsShip).ShipID.ToString());
-
-                System.Threading.Thread.Sleep(500);
+                await clsJSONConnection.DeleteShip((lstShips.SelectedItem as clsShip).ShipID.ToString());
 
                 SetDetails(_Nation);
-                //frmNations.Instance.UpdateDisplay();
             }
         }
 
@@ -131,27 +124,5 @@ namespace AdminApp
             pushData();
             Hide();
         }
-
-        private Boolean isValid()
-        {
-            
-            //if (txtName.Enabled && txtName.Text != "")
-            //    if (_Artist.IsDuplicate(txtName.Text))
-            //    {
-            //        MessageBox.Show("Artist with that name already exists!", "Error adding artist");
-            //        return false;
-            //    }
-            //    else
-            //        return true;
-            //else
-                return true;
-        }
-
-        private void rbByDate_CheckedChanged(object sender, EventArgs e)
-        {
-//            _WorksList.SortOrder = Convert.ToByte(rbByDate.Checked);
-            UpdateDisplay();
-        }
-
     }
 }

@@ -15,7 +15,7 @@ namespace AdminApp
         public string Name { get; set; }
         public int BuildingCapacity { get; set; }
 
-        public ICollection<clsShip> NationShips { get; set; }
+        public IList<clsShip> NationShips { get; set; }
 
         public override string ToString() {
             return Name + "\t" + BuildingCapacity.ToString();

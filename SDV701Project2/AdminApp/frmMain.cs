@@ -12,15 +12,6 @@ namespace AdminApp
 {
     public partial class frmMain : Form
     {
-
-        private static List<clsNation> _NationList = new List<clsNation>();
-
-        public static List<clsNation> NationList
-        {
-            get { return _NationList; }
-            set { _NationList = value; }
-        }
-
         public frmMain() {
             InitializeComponent();
         }
@@ -55,7 +46,7 @@ namespace AdminApp
             lblStatus.Text = "Status: Establishing Connection";
             try
             {
-                NationList = clsJSONConnection.GetAllNations();
+                clsNations.NationList = clsJSONConnection.GetAllNations();
                 Status = "Status: Connected";
                 btnNations.Enabled = true;
                 btnOrders.Enabled = true;

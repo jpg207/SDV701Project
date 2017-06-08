@@ -31,7 +31,7 @@ namespace Gallery3WinForm
         public string Answer
         {
             get { return _Answer; }
-            //set { mAnswer = value; }
+            //set { Answer = value; }
         }
     }
 }
