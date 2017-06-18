@@ -19,18 +19,18 @@ namespace AdminApp
             ShowDialog();
         }
 
-        private async void btnOK_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             if (isValid())
             {
                 pushData();
                 if (txtName.Enabled == true)
                 {
-                    await clsJSONConnection.AddShip(_Ship);
+                    clsJSONConnection.AddShip(_Ship);
                 }
                 else
                 {
-                    await clsJSONConnection.UpdateShip(_Ship);
+                    clsJSONConnection.UpdateShip(_Ship);
                 }
                 Close();
             }

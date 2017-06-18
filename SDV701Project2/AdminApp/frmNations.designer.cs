@@ -72,7 +72,6 @@ namespace AdminApp
             this.lstNation.Name = "lstNation";
             this.lstNation.Size = new System.Drawing.Size(227, 186);
             this.lstNation.TabIndex = 7;
-            this.lstNation.SelectedIndexChanged += new System.EventHandler(this.lstArtists_SelectedIndexChanged);
             this.lstNation.DoubleClick += new System.EventHandler(this.lstNations_DoubleClick);
             // 
             // label3

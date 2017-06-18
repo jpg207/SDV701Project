@@ -26,7 +26,6 @@ namespace AdminApp
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -35,15 +34,11 @@ namespace AdminApp
             this.btnOK = new System.Windows.Forms.Button();
             this.lblDateOfMod = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.NumericUpDown();
+            this.txtPrice = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(97, 57);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtPrice.TabIndex = 3;
             // 
             // Label2
             // 
@@ -114,20 +109,37 @@ namespace AdminApp
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(97, 111);
+            this.txtStock.Location = new System.Drawing.Point(97, 115);
+            this.txtStock.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 20);
-            this.txtStock.TabIndex = 49;
+            this.txtStock.Size = new System.Drawing.Size(120, 20);
+            this.txtStock.TabIndex = 50;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(97, 59);
+            this.txtPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(120, 20);
+            this.txtPrice.TabIndex = 51;
             // 
             // frmShip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 245);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDateOfMod);
-            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtName);
@@ -136,14 +148,14 @@ namespace AdminApp
             this.Controls.Add(this.btnOK);
             this.Name = "frmShip";
             this.Text = "Ship";
+            ((System.ComponentModel.ISupportInitialize)(this.txtStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        internal System.Windows.Forms.TextBox txtPrice;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.TextBox txtName;
@@ -152,6 +164,7 @@ namespace AdminApp
         internal System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label lblDateOfMod;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.NumericUpDown txtStock;
+        private System.Windows.Forms.NumericUpDown txtPrice;
     }
 }

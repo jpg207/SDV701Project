@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Gallery3WinForm
+namespace AdminApp
 {
     public partial class InputBox : Form
     {
@@ -31,7 +31,6 @@ namespace Gallery3WinForm
         public string Answer
         {
             get { return _Answer; }
-            //set { Answer = value; }
         }
     }
 }

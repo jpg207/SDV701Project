@@ -29,15 +29,6 @@ namespace AdminApp
             }
         }
 
-        //internal async static Task<List<clsNation>> GetAllNations() {
-        //    using (HttpClient lcHttpClient = new HttpClient()) { 
-        //        JsonSerializerSettings settings = new JsonSerializerSettings{
-        //            TypeNameHandling = TypeNameHandling.All
-        //        };
-        //        return JsonConvert.DeserializeObject<List<clsNation>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllNations/"), settings);
-        //    }
-        //}
-
         internal async static Task<List<clsOrder>> GetAllOrders() {
             using (HttpClient lcHttpClient = new HttpClient())
                 return JsonConvert.DeserializeObject<List<clsOrder>>(await lcHttpClient.GetStringAsync(BaseAddress + "SelectAllOrders"));
@@ -53,7 +44,7 @@ namespace AdminApp
                 await lcHttpClient.GetStringAsync(BaseAddress + "DeleteShip/" + ShipID);
         }
 
-        internal async static Task AddShip(clsShip Ship) {
+        public static void AddShip(clsShip Ship) {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);
             client.DefaultRequestHeaders.Accept.Add(
@@ -64,7 +55,7 @@ namespace AdminApp
             var response = client.PostAsJsonAsync("AddShip", Ship).Result;
         }
 
-        internal async static Task UpdateShip(clsShip Ship) {
+        public static void UpdateShip(clsShip Ship) {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(BaseAddress);
             client.DefaultRequestHeaders.Accept.Add(

@@ -2,8 +2,6 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
-using Gallery3WinForm;
-using System.Threading.Tasks;
 
 namespace AdminApp
 {
@@ -62,7 +60,6 @@ namespace AdminApp
         public void SetDetails(clsNation prNation)
         {
             refreshDB();
-            System.Threading.Thread.Sleep(1);
             _Nation = clsNations.NationList.First(clsNation => clsNation.NationID == prNation.NationID);
             lblNation.Text = _Nation.Name;
             UpdateForm();

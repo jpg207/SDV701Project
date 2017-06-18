@@ -1,4 +1,4 @@
-namespace Gallery3WinForm
+namespace AdminApp
 {
     partial class InputBox
     {
