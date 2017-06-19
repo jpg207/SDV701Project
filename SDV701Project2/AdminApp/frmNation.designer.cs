@@ -26,7 +26,6 @@ namespace AdminApp
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lblTotal = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -38,14 +37,6 @@ namespace AdminApp
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Location = new System.Drawing.Point(14, 243);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(64, 16);
-            this.lblTotal.TabIndex = 26;
-            this.lblTotal.Text = "Total Value: ";
             // 
             // btnClose
             // 
@@ -141,7 +132,6 @@ namespace AdminApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBuildCapacity);
-            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -156,7 +146,6 @@ namespace AdminApp
         }
 
         #endregion
-        internal System.Windows.Forms.Label lblTotal;
         internal System.Windows.Forms.Button btnClose;
         internal System.Windows.Forms.Button btnDelete;
         internal System.Windows.Forms.Button btnAdd;

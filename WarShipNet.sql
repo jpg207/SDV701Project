@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2017 at 07:31 AM
+-- Generation Time: Jun 19, 2017 at 03:46 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -29,7 +29,7 @@ SET @Date = (SELECT CURDATE());
 SET @Cost = (SELECT Price FROM ship WHERE ShipID = inShipID) * ItemQuantity;
 SET @Stock = (SELECT StockQuanitiy FROM Ship WHERE ShipID = inShipID) - ItemQuantity;
 UPDATE ship SET StockQuanitiy=@Stock WHERE ShipID = inShipID;
-INSERT INTO `order`(`DateOfOrder`, `Quantity`, `Price`, `CustomerEmail`, `Name`, `ShipID`) VALUES (@Date, ItemQuantity, @Cost, Email, UserName, inShipID);
+INSERT INTO `order`(`DateOfOrder`, `Quantity`, `Price`, `CustomerEmail`, `CustName`, `ShipID`) VALUES (@Date, ItemQuantity, @Cost, Email, UserName, inShipID);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AddShip` (IN `ShipClassType` VARCHAR(50), IN `ShipName` VARCHAR(50), IN `ShipPrice` DECIMAL, IN `ShipStock` MEDIUMINT(9), IN `ShipTorpBulge` MEDIUMINT(9), IN `ShipHeal` MEDIUMINT(9), IN `ShipPlane` VARCHAR(50), IN `ShipTorps` VARCHAR(9), IN `ShipNation` MEDIUMINT(8))  BEGIN 
@@ -50,7 +50,7 @@ SELECT * FROM nation;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SelectAllOrders` ()  BEGIN
-  SELECT * FROM `order`;
+	SELECT OR1.`OrderID`, OR1.`DateOfOrder`, OR1.`Quantity`, OR1.`Price`, OR1.`CustomerEmail`, OR1.`CustName`, OR1.`ShipID`, SH1.`Name` FROM `order` OR1  INNER JOIN `ship` SH1 ON OR1.`ShipID`=SH1.`ShipID`;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SelectShips` (IN `ID` VARCHAR(255))  BEGIN 
@@ -97,7 +97,7 @@ CREATE TABLE `order` (
   `Quantity` mediumint(9) DEFAULT NULL,
   `Price` decimal(4,0) DEFAULT NULL,
   `CustomerEmail` varchar(255) DEFAULT NULL,
-  `Name` varchar(70) DEFAULT NULL,
+  `CustName` varchar(70) DEFAULT NULL,
   `ShipID` mediumint(8) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -105,14 +105,18 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`OrderID`, `DateOfOrder`, `Quantity`, `Price`, `CustomerEmail`, `Name`, `ShipID`) VALUES
+INSERT INTO `order` (`OrderID`, `DateOfOrder`, `Quantity`, `Price`, `CustomerEmail`, `CustName`, `ShipID`) VALUES
 (21, '2017-06-04', 2, '300', 'a@a', 'aa', 2),
 (22, '2017-06-04', 2, '300', 'a@a', 'aa', 2),
 (23, '2017-06-04', 3, '450', 'jpg207@gmail.com', 'Jonathan', 2),
 (24, '2017-06-05', 3, '300', 'HJHHIUI@adad', 'David', 4),
 (25, '2017-06-05', 5, '500', 'a@a', 'Amber', 4),
 (26, '2017-06-05', 5, '1000', 'a@a', 'ddsdssd', 1),
-(27, '2017-06-07', 10, '9999', 'A@B.com', 'Alex', 1);
+(27, '2017-06-07', 10, '9999', 'A@B.com', 'Alex', 1),
+(28, '2017-06-19', 1, '2001', 'jpg207@gmail.com', 'aa', 1),
+(29, '2017-06-19', 1, '1001', 'jpg207@gmail.com', 'Jonathan', 4),
+(31, '2017-06-19', 4, '20', 'test@x.x', 'Test', 11),
+(32, '2017-06-19', 6, '6006', 'jpg207@gmail.com', 'aa', 4);
 
 -- --------------------------------------------------------
 
@@ -139,11 +143,11 @@ CREATE TABLE `ship` (
 --
 
 INSERT INTO `ship` (`$type`, `ShipID`, `Name`, `Price`, `DateOfModification`, `StockQuanitiy`, `TorpedoBulge`, `HealAmount`, `PlaneType`, `TorpedoTubeCount`, `NationID`) VALUES
-('AdminApp.clsBattleShip, AdminApp', 1, 'New Mexico', '2001', '2017-06-06', 10, 25, 2000, NULL, NULL, 1),
+('AdminApp.clsBattleShip, AdminApp', 1, 'New Mexico', '2001', '2017-06-19', 10, 25, 2000, NULL, NULL, 1),
 ('AdminApp.clsBattleShip, AdminApp', 2, 'Fuso', '150', '0000-00-00', 15, 30, 1000, NULL, NULL, 2),
-('AdminApp.clsCruiser, AdminApp', 4, 'Fiji', '1001', '2017-06-06', 15, NULL, NULL, 'Fighter', '2', 1),
-('AdminApp.clsBattleShip, AdminApp', 5, 'Colorado', '200', '2017-06-07', 0, 20, 2000, NULL, NULL, 1),
-('AdminApp.clsCruiser, AdminApp', 10, 'DASasd', '1111', '2017-06-14', 0, NULL, NULL, '', '', 1);
+('AdminApp.clsCruiser, AdminApp', 4, 'Fiji', '1001', '2017-06-19', 8, NULL, NULL, 'Fighter', '2', 1),
+('AdminApp.clsCruiser, AdminApp', 10, 'DASasd', '1111', '2017-06-19', 4, NULL, NULL, '', '', 1),
+('AdminApp.clsBattleShip, AdminApp', 11, 'Test', '5', '2017-06-19', 0, 10, 250, NULL, NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -182,12 +186,12 @@ ALTER TABLE `nation`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `OrderID` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `OrderID` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `ship`
 --
 ALTER TABLE `ship`
-  MODIFY `ShipID` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ShipID` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --

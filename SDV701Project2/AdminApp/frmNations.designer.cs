@@ -26,28 +26,11 @@ namespace AdminApp
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lblValue = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.lstNation = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblValue
-            // 
-            this.lblValue.Location = new System.Drawing.Point(87, 219);
-            this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(71, 24);
-            this.lblValue.TabIndex = 13;
-            // 
-            // Label2
-            // 
-            this.Label2.Location = new System.Drawing.Point(17, 221);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(64, 16);
-            this.Label2.TabIndex = 12;
-            this.Label2.Text = "Total Value";
             // 
             // btnClose
             // 
@@ -88,8 +71,6 @@ namespace AdminApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(260, 253);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblValue);
-            this.Controls.Add(this.Label2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.lstNation);
@@ -101,9 +82,6 @@ namespace AdminApp
         }
 
         #endregion
-
-        internal System.Windows.Forms.Label lblValue;
-        internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Button btnClose;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ListBox lstNation;
